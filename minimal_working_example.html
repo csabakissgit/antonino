@@ -1,0 +1,408 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    
+<!--Version of2024-12-20-->
+
+       <head>
+       <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+       <rt id="realtitle"></rt>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" href="css/style_scroll.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <script src="js/jquery.min.js"></script>
+       <script defer src="js/csaba_edition_scripts.js"></script>
+    </head>
+       <body onload="loaded();">
+       <span style="font-size:100%; cursor:pointer; color:#cc8800; float:left;" onclick="openNavLeft()"><b>&#10095;</b></span>
+        <div id="mySidenavLeft" class="sidenavleft">
+          <a href="javascript:void(0)" class="closebtnleft" onclick="closeNavLeft()">&times;</a>
+  <span class="instr">
+        <b>&#10086; HOW TO USE THIS PAGE &#10086;</b> <br/><br/>
+        &#9758; The three windows are draggable and resizable<br/>
+         &#9758; Press keys 's', 't', and 'n' to toggle the Sanskrit text,
+         the translation and the notes, respectively (the last one popping up will take the foreground, potentially overlapping the others);
+         press 'o' to open/close all apparatus entries; press 'd' to toggle Roman/Devanāgarī<br/>
+         &#9758; You can also use these buttons for the same:<br/>
+          <button onclick="togglearea('translation')" id="showtextandtranslation">Toggle Translation</button><br/>
+          <button onclick="togglearea('notes')"       id="txttrnotes">Toggle Notes</button><br/>
+          <button onclick="toggleallapp()"              id="toggleallapp">Open all apparatus entries</button><br/>
+          <button onclick="turnItDevnag()"            id="switchbutton">Switch to Devanāgarī</button><br/>
+          &#9758; Single click on Sanskrit line to scroll to relevant note, if any, and if notes are being displayed<br/>
+          &#9758; Double click on Sanskrit line to display apparatus and highlight translation of verse (if translation is visible)<br/>
+          &#9758; Click inside apparatus box to close it<br/>
+          &#9758; Double click on translation to toggle highlighting on relevant Sanskrit verse<br/>
+          &#9758; Hovering over a siglum in the apparatus that has the ∑ sign will show the underlying MSS sigla<br/>
+     </span>
+     </div>
+
+          <span style="font-size:100%; cursor:pointer; color:#cc8800; float:right;" onclick="openNavRight()"><b>&#10094;</b></span>
+          <div id="mySidenavRight" class="sidenavright">
+          <a href="javascript:void(0)" class="closebtnright" onclick="closeNavRight()">&times;</a>
+            <span class="instr">
+            <a href="index.html">Home &#9758;</a>
+    
+<a href="minimal_working_example_metadata.html" target="_blank">Metadata &#9758;</a>
+<a href="index.html">Manuscript images &#9758;</a>
+<a href="minimal_working_example.pdf" target="_blank">Printed edition &#9758;</a>
+
+            <a href="index.html">Parallel texts &#9758;</a>
+            <a href="index.html">Bibliography &#9758;</a>
+            <a href="index.html">Acknowledgements &#9758;</a>
+            <a href="index.html">Search &#9758;</a>
+            </span>
+            </div>
+
+          <div class="text" id="sanskrittext">
+           <div id="sanskrittextdragarea" onclick="putareaforward('sanskrittext')">
+          <br/>
+    
+
+<div class="wrap-main">
+<TEXT id="0.1ab" class="sktvrs0.1">
+<RMTEXT> blablabla  blablabla blabla  bliblibli bliblibli blibli |</RMTEXT>
+<DNTEXT>ब्लब्लब्ल  ब्लब्लब्ल ब्लब्ल  ब्लिब्लिब्लि ब्लिब्लिब्लि ब्लिब्लि ।   </DNTEXT></TEXT>
+
+
+<div class="wrap-content" id="app0.1ab">
+
+<RMAPP>        <VSNUMPADA>1a</VSNUMPADA> <LEM>blabla</LEM> <span class="ms">C<sub>94</sub></span>; bloblu <span class="ms">C<sub>45</sub></span><br/>
+</RMAPP><DNAPP>        <VSNUMPADA>१  a:</VSNUMPADA> <LEM>ब्लब्ल </LEM> <span class="ms">C<sub>94</sub></span>; ब्लोब्लु <span class="ms">C<sub>45</sub></span><br/>
+  </DNAPP>
+<hr width="50%" size="1" align="left" color="#cc8800"/>
+        <PARAL>1ab <SKT>≈ BhG 10.12ab</SKT></PARAL>
+
+
+</div>
+</div>
+
+<div class="wrap-main">
+<TEXT id="0.1cd" class="sktvrs0.1">
+<RMTEXT> blobloblo  blobloblo bloblo  blublublublu blubluṃ blublu ||<span class="vsnum">0.1</span>||</RMTEXT>
+<DNTEXT>ब्लोब्लोब्लो  ब्लोब्लोब्लो ब्लोब्लो  ब्लुब्लुब्लुब्लु ब्लुब्लुं ब्लुब्लु ॥<span  class="vsnum">०:१</span>   </DNTEXT></TEXT>
+<spaceaftersloka/>
+
+<div class="wrap-content" id="app0.1cd">
+
+<RMAPP>        <VSNUMPADA>1d</VSNUMPADA> <LEM>blubluṃ</LEM> <span class="ms">C<sub>94</sub></span>; bloblumda <span class="ms">C<sub>45</sub></span><br/>
+</RMAPP><DNAPP>        <VSNUMPADA>१  d:</VSNUMPADA> <LEM>ब्लुब्लुं </LEM> <span class="ms">C<sub>94</sub></span>; ब्लोब्लुम्द <span class="ms">C<sub>45</sub></span><br/>
+  </DNAPP>
+</div></div><br/><br/><br/><br/></div></div>
+<div class="translation" id="translation">
+             <div id="translationdragarea" onclick="putareaforward('translation')">
+             <br/>
+             
+<h2>Translation</h2>
+
+<br/><br/>
+<span class="vsnum" id="tr0.1">|0.1|</span>       
+<trnsl class="trnsl0.1" ondblclick="showSkt(&#39sktvrs0.1&#39)">This is the beginning of the translation...</trnsl>
+       
+<trnsl class="trnsl0.1" ondblclick="showSkt(&#39sktvrs0.1&#39)">... and then it contimues.</trnsl>
+
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div></div>
+<div class="notes" id="notes">
+<div id="notesdragarea" onclick="putareaforward('notes')"><br/>
+<h2>Notes</h2>
+
+<br/><br/>
+|<vsnum id="note0.1">0.1</vsnum>| 
+        <NOTE>So this is a short note...</NOTE>
+
+
+<br/>
+<br/></div></div>
+
+
+
+<div class="msimage01" id="msimage01">
+
+<div id="msimage01dragarea" onclick="putareaforward('msimage01')">
+
+<br/>
+
+<h2>MS N<sup>K</sup><sub>82</sub></h2>
+
+
+
+<p>Press '1' to toggle; for other MSS, press 2, 3, 4, etc. Resize images with + and - below</p>
+
+
+
+<span onclick="magnify('img_ms1.1')">+</span>
+
+<span onclick="demagnify('img_ms1.1')">-</span>
+
+Verses 10.1–21c
+
+<br/>
+
+<img id="img_ms1.1" src="mss_img/nk82/0029.jpg" width="100"/>
+
+<br/>
+
+
+
+<span onclick="magnify('img_ms1.2');">+</span>
+
+<span onclick="demagnify('img_ms1.2');">-</span>
+
+Verses 10.21c–56b
+
+<br/>
+
+<img id="img_ms1.2" src="mss_img/nk82/0030.jpg" width="100" />
+
+<br/>
+
+
+
+<span onclick="magnify('img_ms1.3');">+</span>
+
+<span onclick="demagnify('img_ms1.3');">-</span>
+
+Verses 10.56c–92b
+
+<br/>
+
+<img id="img_ms1.3" src="mss_img/nk82/0031.jpg" width="100" />
+
+<br/>
+
+
+
+<span onclick="magnify('img_ms1.4');">+</span>
+
+<span onclick="demagnify('img_ms1.4');">-</span>
+
+Verses 10.92c–128a
+
+<br/>
+
+<img id="img_ms1.4" src="mss_img/nk82/0032.jpg" width="100" />
+
+<br/>
+
+
+
+<span onclick="magnify('img_ms1.5');">+</span>
+
+<span onclick="demagnify('img_ms1.5');">-</span>
+
+Verses 10.128a–163c
+
+<br/>
+
+<img id="img_ms1.5" src="mss_img/nk82/0033.jpg" width="100" />
+
+<br/>
+
+
+
+<span onclick="magnify('img_ms1.6');">+</span>
+
+<span onclick="demagnify('img_ms1.6');">-</span>
+
+Verses 10.163d–199a
+
+<br/>
+
+<img id="img_ms1.6" src="mss_img/nk82/0034.jpg" width="100" />
+
+<br/>
+
+
+
+<span onclick="magnify('img_ms1.7');">+</span>
+
+<span onclick="demagnify('img_ms1.7');">-</span>
+
+Verses 10.199b–223
+
+<br/>
+
+<img id="img_ms1.7" src="mss_img/nk82/0035.jpg" width="100" />
+
+<br/>
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="msimage02" id="msimage02" style="display: none">
+
+<div id="msimage02dragarea" onclick="putareaforward('msimage02')">
+
+<br/>
+
+
+
+<h2>MS NK7</h2>
+
+
+
+<p>Press '2' to toggle; for other MSS, press 1, 3, 4, etc. Resize images with + and - below</p>
+
+<span onclick="magnify('img_ms2.1')">+</span>
+
+<span onclick="demagnify('img_ms2.1')">-</span>
+
+Verses 1.1-34
+
+<br/>
+
+<img id="img_ms2.1" src="mss_img/VSS_NK7/212.JPG" width="100" />
+
+<br/>
+
+<span onclick="magnify('img_ms2.2')">+</span>
+
+<span onclick="demagnify('img_ms2.2')">-</span>
+
+Verses 1.34-60
+
+<br/>
+
+<img id="img_ms2.3" src="mss_img/VSS_NK7/213.JPG" width="100" />
+
+<br/>
+
+<img id="img_ms2.3" src="mss_img/VSS_NK7/214.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/215.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/216.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/217.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/218.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/219.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/220.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/221.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/222.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/223.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/224.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/225.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/226.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/227.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/228.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/229.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/230.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/231.JPG" width="100" />
+
+<br/>
+
+<img src="mss_img/VSS_NK7/232.JPG" width="100" />
+
+
+
+<br/>
+
+</div>
+
+</div>
+
+
+        <script>
+    //Make the DIV elements draggable:
+    dragElement(document.getElementById("sanskrittext"));
+    dragElement(document.getElementById("translation"));
+    dragElement(document.getElementById("notes"));
+    dragElement(document.getElementById("msimage01"));
+    dragElement(document.getElementById("msimage02"));
+    function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    if (document.getElementById(elmnt.id + "dragarea")) {
+        /* if present, the dragarea is where you move the DIV from:*/
+        document.getElementById(elmnt.id + "dragarea").onmousedown = dragMouseDown;
+    } else {
+        /* otherwise, move the DIV from anywhere inside the DIV:*/
+        elmnt.onmousedown = dragMouseDown;
+    }
+    function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+    }
+    function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+    function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+    }
+    </script>
+    
+
+</body>
+</html>

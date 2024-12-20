@@ -1,0 +1,614 @@
+@font-face {
+    font-family: Adishila;
+    src: url(../fonts/Adishila.ttf);
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url(../fonts/EB_Garamond_Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('/surface/Assets/css/fonts/all/normal/segoeui.eot');
+    src: url('/surface/Assets/css/fonts/all/normal/segoeui.eot?#iefix') format('embedded-opentype'),
+         url('/surface/Assets/css/fonts/all/normal/segoeui.woff') format('woff'),
+         url('/surface/Assets/css/fonts/all/normal/segoeui.svg#SegoeUI') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  background: no-repeat url("../img/background.png");
+  background-color: white;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  font-family: 'EB Garamond';
+  transition: background-position 2s;
+}
+
+.text, .translation, .notes, .msimage01, .msimage02 {
+    background-color: white;
+    text-align: justify;
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-family: 'EB Garamond', 'Adishila';
+    border: solid thin orange;
+    border-radius: 3px;
+    border-width: 1px;
+    word-wrap: break-word;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    resize:both;
+    opacity: 1;
+}
+
+
+
+
+.text {
+    font-family: 'EB Garamond',  'Adishila';
+    line-height: 1.4em;
+    top: 1%;
+    left: 3%;
+    height: 97%;
+    width: 43%;
+    color: black;
+    font-style: normal;
+    padding-left: 20px;
+    font-size: 100%;
+    overflow-x: hidden;
+    resize:both;
+    opacity: .9;
+}
+
+.translation {
+    line-height: 1.2em;
+    top: 1%;
+    left: 50%;
+    height: 50%;
+    width: 43%;
+    font-size: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    opacity: .95;
+}
+
+
+.notes {
+    line-height: 1.2em;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    height: 43%;
+    width: 35%;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: white;
+    color: black;
+    font-style: normal;
+    font-size: 90%;
+    opacity: .95;
+}
+
+@media only screen and (min-width: 1000px) {
+  .translation {
+    top: 20%;
+    left: 40%;
+    height: 78%;
+    width: 35%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .notes {
+    top: 40%;
+    left: 65%;
+    height: 58%;
+    width: 30%;
+  }
+}
+
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: red;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+}
+
+
+.msimage01 {
+    top: 30%;
+    left: 20%;
+    width: 20%;
+    bottom: 0%;
+    height: 40%;
+    overflow: scroll;
+    color: grey;
+    background-color: #fff7e6;
+    font-style: normal;  
+    padding-top: 2px;
+    padding-left: 20px;
+    font: normal 1em palatino;
+    display: none;
+    resize: both;
+    border: solid thin orange;
+    border-radius: 3px;
+}
+
+.msimage02 {
+    top: 20%;
+    left: 40%;
+    width: 20%;
+    bottom: 0%;
+    height: 40%;
+    overflow: scroll;
+    color: grey;
+    background-color: #fff7e6;
+    font-style: normal;
+    padding-top: 2px;
+    padding-left: 20px;
+    font: normal 1em palatino;
+    display: none;
+    resize: both;
+    border: solid thin orange;
+    border-radius: 3px;
+}
+
+.ms {
+   color: blue;
+}
+
+.mss {
+   color: red;
+}
+
+
+.wrap-main {
+  display: block;
+  position: relative;
+  color: grey;
+  /* font-size: .9em; */
+}
+
+.wrap-content {
+  position: relative;
+  top: 0%;
+  right: 0%;
+  left: 1%;
+  bottom: 3%;
+  padding: .5em;
+  max-width: 70%;
+  font-size: .8em;
+  line-height: 1em;
+  border: solid thin;
+  border-radius: 0%;
+  margin: .4em;
+  color: grey;
+  }
+
+th, td {
+  padding: 1px;
+  text-align: left;
+}
+
+
+
+TEXT {
+	display: block;
+}
+
+RMTEXT {
+	display: inline;
+	color: black;
+	}
+
+DNTEXT {
+	display:none;
+	color: black;
+}
+
+proseblock {
+    width: 80%;
+    display: block;
+    border-style: thin;
+    border-radius: 40px;
+    background-color: #f8f5fA;
+    padding: 10px;
+}
+
+PARAL {
+	display: block;
+	color: black;
+}
+
+LACUNA {
+	display: block;
+	color: brown;
+}
+
+uvaca {
+
+}
+
+subchapter {
+	display: block;
+        font-weight: bold;
+	color: #800040;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+subsubchapter {
+	display: block;
+  font-weight: bold;
+	color: #cc8800;
+	font-size: 80%}
+
+
+trnsl {
+	display: inline;
+        font-weight: normal;
+	color: black;
+	font-size: 100%;
+	width: 100%;
+}
+
+trnslchapter {
+	display: block;
+     font-weight: bold;
+	color: #cc8800;
+	font-size: 170%;
+}
+
+trnslchapter:before {
+	content: "["}
+trnslchapter:after {
+	content: " ]"}
+
+
+trnslsubchapter {
+	display: inline;
+        font-weight: bold;
+	color: #800040;
+	font-size: 100%;
+}
+
+trnslsubchapter:before {
+	content: "[ "}
+trnslsubchapter:after {
+	content: " ]"}
+
+
+
+trnslsubsubchapter {
+	display: inline;
+        font-weight: bold;
+	color: #cc8800;
+	font-size: 80%;
+}
+
+trnslsubsubchapter:before {
+	content: "[ "}
+trnslsubsubchapter:after {
+	content: " ]"}
+
+
+prose {
+   font-style: italic;
+}
+
+pnum:before {
+        content: ", "
+}
+
+
+chapter {
+	display: block;
+        font-weight: bold;
+	color: #cc8800;
+	font-size: 120%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+RMAPP {
+	display: inline;
+	color: black;
+}
+
+DNAPP {
+	display:none;
+	color: black;
+}
+
+.instr {
+	display:block;
+	color: black;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 80%;
+	}
+
+@media only screen and (min-width: 1000px) {
+  .instr {
+    font-size: 120%;
+  }
+}
+
+
+LEM {
+ 	/* color: #cc8800; */
+ 	color: #cc8800;
+	font-weight: bold; 
+ 	
+}
+
+LEM:after {
+	content: " ]";
+ 	color: #cc8800;
+}
+
+
+DNLEM:after {
+	content: " ]";
+ 	color: #cc8800;
+}
+
+
+sub {
+	font-size:70%;
+}
+sup {
+	font-size:70%;
+}
+
+
+.vsnum {
+        font-size: 1em;
+	color: #cc8800;
+	}
+
+spaceaftersloka {
+  	display: block;
+  	margin-top: 10px;
+}
+
+skt {
+        font-style: italic;
+}
+
+corr {
+        font-size: .7em;
+        color: blue;
+}
+
+button {
+  border: none;
+  color: grey;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  }
+
+
+h1 {
+ 	color: #cc8800;
+	padding-bottom: 50px;
+    font-size: 140%;
+}
+
+
+h2 {
+ 	color: #cc8800;
+}
+
+colophon {
+ 	color: #cc8800;
+        text-align: right;
+}
+
+
+trnslcolophon {
+ 	color: #cc8800;
+        text-align: right;
+}
+
+
+blockquote q {
+  quotes: "‘" "’" "“" "”";
+}
+
+
+crux:before {
+	content: "†";
+	color: red;
+}
+
+crux:after {
+	content: "†";
+	color: red;
+}
+
+
+a  { 
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+	}
+	
+a:visited { 
+	font-weight: bold;
+	text-decoration: none;
+	color: #cc8800;
+	}
+	
+a:hover, a:focus, a:active { 
+	text-decoration: none;
+	color: orange;
+	}
+
+
+
+
+select {
+  width: 30%;
+  font-size: 50%;
+  padding: 1px 2px;
+  border: solid;
+  border-radius: 40px;
+  color: #cc8800;
+  background-color: #cc8800;
+  border-color: #cc8800;
+}
+
+input {
+  padding: 1px 2px;
+  border: solid;
+  border-radius: 4px;
+  color: grey;
+  background-color: #00134d;
+}
+
+
+ /* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  /* border-bottom: 1px dotted black;  */
+ /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #555;
+  color: black;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: dotted;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  background-color: white;
+}
+
+
+
+
+/*SIDENAV*/
+
+.sidenavleft {
+  height: 87%;
+  width: 0%;
+  position: absolute;
+  text-align: justify;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: white;
+  transition: 0.5s;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  opacity: 0.96;
+}
+
+.sidenavleft a {
+  padding: 2% 2% 2% 2%;
+  text-decoration: none;
+  font-size: 2%;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenavleft a:hover {
+  color: black;
+}
+
+.sidenavleft .closebtnleft {
+  position: absolute;
+  top: 0;
+  right: 2%;
+  font-size: 80%;
+  margin-left: 2%;
+  opacity: .8;
+}
+
+
+
+.sidenavright {
+  height: 87%;
+  width: 0%;
+  top: 0;
+  right: 0%;
+  position: absolute;
+  text-align: left;
+  z-index: 1000;
+  background-color: white;
+  transition: 0.5s;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  opacity: 0.96;
+}
+
+.sidenavright a {
+  padding: 2% 2% 2% 2%;
+  text-decoration: none;
+  font-size: 100%;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenavright a:hover {
+  color: black;
+}
+
+.sidenavright .closebtnright {
+  position: absolute;
+  top: 0;
+  font-size: 100%;
+  float: right;
+  opacity: .8;
+}
+
